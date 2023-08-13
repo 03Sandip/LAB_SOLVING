@@ -54,10 +54,7 @@ gcloud builds submit --tag="${REGION}-docker.pkg.dev/${PROJECT_ID}/my-repository
 
 Task 4.
 
-
-cd ~/hello-cloudbuild-app
-
-git push google master
+DO IT MANNUALY 
 
 -------------------------------------------------------------------------------------------
 
