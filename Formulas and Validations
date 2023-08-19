@@ -1,0 +1,6 @@
+1---    EndDate - TODAY()
+
+
+
+2---    AND (NOT (ISBLANK ( AccountId)), MailingPostalCode  
+        Account.ShippingPostalCode )
