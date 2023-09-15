@@ -1,6 +1,6 @@
-export REGION=us-east4
-export REGION2=us-east1
-export ZONE=us-east4-c
+export REGION=
+export REGION2=
+export ZONE=
 
 -------------------------------------------------------------------------------------------
 
