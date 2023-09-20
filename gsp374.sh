@@ -22,17 +22,16 @@ BG_WHITE=`tput setab 7`
 
 BOLD=`tput bold`
 RESET=`tput sgr0`
+#----------------------------------------------------start--------------------------------------------------#
+
+echo "${YELLOW}${BOLD}
+
+
 
 
 ${RESET}"
-#gcloud auth list
-#gcloud config list project
 export PROJECT_ID=$(gcloud info --format='value(config.project)')
-#export BUCKET_NAME=$(gcloud info --format='value(config.project)')
-#export EMAIL=$(gcloud config get-value core/account)
-#gcloud config set compute/region us-central1
-#gcloud config set compute/zone us-central1-a
-#export ZONE=us-central1-a
+
 
 
 
@@ -48,6 +47,15 @@ bq load --autodetect --source_format=NEWLINE_DELIMITED_JSON $DEVSHELL_PROJECT_ID
 bq load --autodetect --source_format=NEWLINE_DELIMITED_JSON $DEVSHELL_PROJECT_ID:soccer.teams gs://spls/bq-soccer-analytics/teams.json
 bq load --autodetect --source_format=NEWLINE_DELIMITED_JSON $DEVSHELL_PROJECT_ID:soccer.players gs://spls/bq-soccer-analytics/players.json
 bq load --autodetect --source_format=NEWLINE_DELIMITED_JSON $DEVSHELL_PROJECT_ID:soccer.events gs://spls/bq-soccer-analytics/events.json
+
+echo "${GREEN}${BOLD}
+
+
+
+${RESET}"
+
+
+#TASK 2
 
 
 bq query --use_legacy_sql=false \
@@ -76,6 +84,16 @@ numPkAtt >= 5
 ORDER BY
 PKSuccessRate DESC, numPKAtt DESC
 "
+
+echo "${GREEN}${BOLD}
+
+
+
+${RESET}"
+
+
+#task 3
+
 
 bq query --use_legacy_sql=false \
 "
@@ -118,6 +136,15 @@ ORDER BY
 ShotDistRound0
 "
 
+echo "${GREEN}${BOLD}
+
+
+
+${RESET}"
+
+
+#TASK 4
+
 
 bq query --use_legacy_sql=false \
 "
@@ -155,6 +182,16 @@ Events.positions[ORDINAL(1)].y) IS NOT NULL
 ;
 "
 
+
+echo "${GREEN}${BOLD}
+
+
+
+${RESET}"
+
+
+
+#Task 5:
 
 bq query --use_legacy_sql=false \
 "
@@ -221,8 +258,7 @@ predictedgoalProb
 
 echo "${GREEN}${BOLD}
 
-Task 5 Completed
-
-Lab completed.
 
 ${RESET}"
+
+
