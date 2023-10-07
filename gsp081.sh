@@ -6,7 +6,7 @@ mkdir cloudlab && cd cloudlab
 cat > index.js <<EOF_END
 
 exports.GCFunction = (req, res) => {
-    let message = req.query.message || req.body.message || 'Subscribe to quicklab';
+    let message = req.query.message || req.body.message || 'Subscribe to cloudlab';
     res.status(200).send(message);
   };
   
