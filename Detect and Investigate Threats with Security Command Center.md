@@ -116,5 +116,3 @@ gcloud compute firewall-rules create apache-test-service-fw \
 
 gcloud compute firewall-rules create apache-test-rvrs-cnnct-fw --allow tcp:8888
 ```
-
-### Perform task 5 using lab instruction page commands
