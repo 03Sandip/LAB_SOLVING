@@ -36,7 +36,7 @@ gcloud dns --project=$DEVSHELL_PROJECT_ID policies create dns-test-policy --desc
 gcloud compute ssh --zone "$ZONE" "instance-1" --tunnel-through-iap --project "$DEVSHELL_PROJECT_ID" --quiet --command "gcloud projects get-iam-policy \$(gcloud config get project) && curl etd-malware-trigger.goog"
 ```
 ###
-## check the score for task 2 do not move ahead until you get score
+## check the score for task 2 after getting score then do next task
 ###
 ```bash
 gcloud compute instances delete instance-1 --zone=$ZONE --quiet
