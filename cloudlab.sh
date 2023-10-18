@@ -1,3 +1,4 @@
+
 gsutil mb gs://$DEVSHELL_PROJECT_ID
 gsutil cp sample.txt gs://$DEVSHELL_PROJECT_ID
 curl -L -o sample.txt https://raw.githubusercontent.com/03Sandip/LAB_SOLVING/main/sample.txt
@@ -5,7 +6,7 @@ gcloud projects remove-iam-policy-binding $DEVSHELL_PROJECT_ID --member=user:$US
 gcloud projects add-iam-policy-binding $DEVSHELL_PROJECT_ID --member=user:$USERNAME2 --role=roles/storage.objectViewer
 gcloud iam service-accounts create read-bucket-objects --display-name="Read Bucket Objects Service Account"
 gcloud projects add-iam-policy-binding $DEVSHELL_PROJECT_ID --member=serviceAccount:read-bucket-objects@$DEVSHELL_PROJECT_ID.iam.gserviceaccount.com --role=roles/storage.objectViewer
-  gcloud iam service-accounts add-iam-policy-binding read-bucket-objects@$DEVSHELL_PROJECT_ID.iam.gserviceaccount.com \
+gcloud iam service-accounts add-iam-policy-binding read-bucket-objects@$DEVSHELL_PROJECT_ID.iam.gserviceaccount.com \
   --member=domain:altostrat.com \
   --role=roles/iam.serviceAccountUser
 gcloud projects add-iam-policy-binding $DEVSHELL_PROJECT_ID --member=domain:altostrat.com --role=roles/compute.instanceAdmin.v1
