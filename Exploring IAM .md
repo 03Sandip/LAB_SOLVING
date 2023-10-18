@@ -5,7 +5,6 @@ export USERNAME2=
 ```bash
 gsutil mb gs://$DEVSHELL_PROJECT_ID
 gsutil cp sample.txt gs://$DEVSHELL_PROJECT_ID
-curl -L -o sample.txt https://raw.githubusercontent.com/03Sandip/LAB_SOLVING/main/sample.txt
 gcloud projects remove-iam-policy-binding $DEVSHELL_PROJECT_ID --member=user:$USERNAME2 --role=roles/viewer
 gcloud projects add-iam-policy-binding $DEVSHELL_PROJECT_ID --member=user:$USERNAME2 --role=roles/storage.objectViewer
 gcloud iam service-accounts create read-bucket-objects --display-name="Read Bucket Objects Service Account"
