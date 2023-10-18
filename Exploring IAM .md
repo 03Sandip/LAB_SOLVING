@@ -4,7 +4,6 @@ export USERNAME2=
 ```
 ```bash
 gsutil mb gs://$DEVSHELL_PROJECT_ID
-curl -L -o sample.txt https://raw.githubusercontent.com/siddharth7000/practice/main/sample.txt
 gsutil cp sample.txt gs://$DEVSHELL_PROJECT_ID
 gcloud projects remove-iam-policy-binding $DEVSHELL_PROJECT_ID --member=user:$USERNAME2 --role=roles/viewer
 gcloud projects add-iam-policy-binding $DEVSHELL_PROJECT_ID --member=user:$USERNAME2 --role=roles/storage.objectViewer
