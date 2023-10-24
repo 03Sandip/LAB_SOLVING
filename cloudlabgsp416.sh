@@ -1,4 +1,4 @@
-
+ 
 
 
 ${RESET}"
@@ -13,6 +13,9 @@ export PROJECT_ID=$(gcloud info --format='value(config.project)')
 
 
 
+#USER_EMAIL=$(gcloud auth list --limit=1 2>/dev/null | grep '@' | awk '{print $2}')
+#----------------------------------------------------code--------------------------------------------------#
+
 
 
 bq mk fruit_store
@@ -21,7 +24,13 @@ bq mk --table --description "Table for fruit details" $DEVSHELL_PROJECT_ID:fruit
 
 bq load --source_format=NEWLINE_DELIMITED_JSON --autodetect $DEVSHELL_PROJECT_ID:fruit_store.fruit_details gs://data-insights-course/labs/optimizing-for-performance/shopping_cart.json
 
+echo "${GREEN}${BOLD}
 
+Task 2 Completed
+
+${RESET}"
+
+#task 3
 
 bq query --use_legacy_sql=false \
 "
@@ -39,7 +48,13 @@ ORDER BY date
 "
 
 
+echo "${GREEN}${BOLD}
 
+Task 3 Completed
+
+${RESET}"
+
+#task 4
 
 
 bq query --use_legacy_sql=false \
@@ -53,7 +68,11 @@ WHERE visitId = 1501570398
 LIMIT 10
 "
 
+echo "${GREEN}${BOLD}
 
+Task 4 Completed
+
+${RESET}"
 
 #task 6
 
@@ -128,7 +147,13 @@ GROUP BY p.name
 ORDER BY total_race_time ASC;
 "
 
+echo "${GREEN}${BOLD}
 
+Task 8 Completed
+
+${RESET}"
+
+#task 9
 
 bq query --use_legacy_sql=false \
 "
@@ -142,6 +167,11 @@ FROM racing.race_results AS r
 WHERE split_time = 23.2;
 "
 
+echo "${GREEN}${BOLD}
 
+Task 9 Completed
 
-exit 0
+Lab Completed !!!
+
+${RESET}"
+
