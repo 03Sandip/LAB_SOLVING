@@ -27,7 +27,7 @@ EOF
 # Create bucket1
 curl -X POST -H "Authorization: Bearer $(gcloud auth print-access-token)" -H "Content-Type: application/json" --data-binary @bucket1.json "https://storage.googleapis.com/storage/v1/b?project=$DEVSHELL_PROJECT_ID"
 ```
-
+* This will create and call the Bucket-2.
 ```
 
 # Create bucket2.json
