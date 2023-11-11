@@ -20,6 +20,8 @@ cat > bucket1.json <<EOF
 }
 EOF
 ```
+
+
 ```
 
 # Create bucket1
