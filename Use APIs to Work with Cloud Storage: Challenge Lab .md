@@ -1,4 +1,5 @@
 
+
 ```
 gcloud services enable fitness.googleapis.com
 
@@ -6,6 +7,8 @@ export OAUTH2_TOKEN=$(gcloud auth print-access-token)
 ```
 
 ## Task 1. Create two Cloud Storage buckets
+
+* This will create and call the Bucket-1.
 
 ```
 echo '{
@@ -21,6 +24,7 @@ curl -X POST --data-binary @values.json \
     "https://www.googleapis.com/storage/v1/b?project=$DEVSHELL_PROJECT_ID"
 ```
 
+* This will create and call the Bucket-2.
 
 ```
 echo '{
@@ -87,3 +91,5 @@ curl -X DELETE \
   -H "Authorization: Bearer $OAUTH2_TOKEN" \
   "https://storage.googleapis.com/storage/v1/b/$DEVSHELL_PROJECT_ID-bucket-1"
 ```
+
+# Congratulations 🎉! You're all done with this Challenge Lab.
