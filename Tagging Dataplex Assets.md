@@ -1,4 +1,10 @@
+
+```bash
+gcloud services enable dataplex.googleapis.com
+
+gcloud services enable datacatalog.googleapis.com
 ```
+```bash 
 export LOCATION=
 ```
 ```bash
