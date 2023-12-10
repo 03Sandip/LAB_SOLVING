@@ -17,7 +17,7 @@ export INTERVAL=
 
 export SERVICE_NAME=
 ```
-***THIS COMMAND IS GOING TO TAKE 10 TO 15 MINUTES ***
+***🔴🔴THIS COMMAND IS GOING TO TAKE 10 TO 15 MINUTES 👇👇👇***
 ```bash
 
 
