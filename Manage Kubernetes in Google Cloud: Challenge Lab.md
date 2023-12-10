@@ -202,7 +202,7 @@ kubectl -n $NAMESPACE apply -f pod-monitoring.yaml
 
 
 
-cat > quicklab.json <<EOF_END
+cat > cloudlab.json <<EOF_END
 {
   "displayName": "Pod Error Alert",
   "userLabels": {},
@@ -236,8 +236,6 @@ cat > quicklab.json <<EOF_END
 }
 EOF_END
 
-gcloud alpha monitoring policies create --policy-from-file="quicklab.json"
-
-
+gcloud alpha monitoring policies create --policy-from-file="cloudlab.json"
 
 ```
