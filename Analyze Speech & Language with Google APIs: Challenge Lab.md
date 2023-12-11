@@ -1,6 +1,6 @@
-``
+```
 export API_KEY=
-``
+```
 ```
 cat > nl_request.json <<EOF
 {
