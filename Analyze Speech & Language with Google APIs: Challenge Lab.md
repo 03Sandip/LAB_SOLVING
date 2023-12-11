@@ -1,3 +1,5 @@
+
+***RUN IN SSH***
 ```
 export API_KEY=
 ```
