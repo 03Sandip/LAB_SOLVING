@@ -2,7 +2,7 @@
 gcloud auth list
 gcloud config list project
 ```
-###Validate a constraint
+## Validate a constraint
 
 ```
 git clone https://github.com/GoogleCloudPlatform/policy-library.git
@@ -42,7 +42,7 @@ sudo apt-get install google-cloud-sdk-terraform-tools
 gcloud beta terraform vet tfplan.json --policy-library=.
 ```
 
-##Modify the constraint
+## Modify the constraint
 
 ```
 apiVersion: constraints.gatekeeper.sh/v1alpha1
