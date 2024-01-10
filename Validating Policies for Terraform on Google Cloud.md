@@ -9,8 +9,6 @@ git clone https://github.com/GoogleCloudPlatform/policy-library.git
 cd policy-library/
 cp samples/iam_service_accounts_only.yaml policies/constraints
 cat policies/constraints/iam_service_accounts_only.yaml
-```
-```
 cat > main.tf <<EOF_END
 terraform {
   required_providers {
@@ -21,12 +19,13 @@ terraform {
   }
 }
 
-}
 resource "google_project_iam_binding" "sample_iam_binding" {
   project = "$DEVSHELL_PROJECT_ID"
   role    = "roles/viewer"
 
-  members = ["user:$USER_EMAIL"]
+  members = [
+    "user:$USER_EMAIL"
+  ]
 }
 EOF_END
 ```
