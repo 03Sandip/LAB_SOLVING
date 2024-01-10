@@ -11,11 +11,7 @@ cp samples/iam_service_accounts_only.yaml policies/constraints
 cat policies/constraints/iam_service_accounts_only.yaml
 ```
 ```
-touch main.tf
-```
-Replace <YOUR PROJECT ID> with Project ID.
-Replace <USER> with Lab username
-```
+cat > main.tf <<EOF_END
 terraform {
   required_providers {
     google = {
@@ -25,14 +21,16 @@ terraform {
   }
 }
 
+}
+```
+```
 resource "google_project_iam_binding" "sample_iam_binding" {
-  project = "<YOUR PROJECT ID>"
+  project = "$DEVSHELL_PROJECT_ID"
   role    = "roles/viewer"
 
-  members = [
-    "user:<USER>"
-  ]
+  members = ["user:$USER_EMAIL"]
 }
+EOF_END
 ```
 ```
 terraform init
@@ -45,6 +43,9 @@ gcloud beta terraform vet tfplan.json --policy-library=.
 ## Modify the constraint
 
 ```
+cd policies/constraints
+
+cat > iam_service_accounts_only.yaml <<EOF_END
 apiVersion: constraints.gatekeeper.sh/v1alpha1
 kind: GCPIAMAllowedPolicyMemberDomainsConstraintV1
 metadata:
@@ -57,11 +58,22 @@ spec:
     domains:
       - gserviceaccount.com
       - qwiklabs.net
-```
-```
+EOF_END
+
+
+cd ~
+
+cd policy-library
+
 terraform plan -out=test.tfplan
+
 gcloud beta terraform vet tfplan.json --policy-library=.
+
+terraform apply test.tfplan
+
+terraform plan -out=test.tfplan
+
+gcloud beta terraform vet tfplan.json --policy-library=.
+
 terraform apply test.tfplan
 ```
-
-
